@@ -5,6 +5,11 @@ require 'haml'
 class SinatraBootstrap < Sinatra::Base
   require './helpers/render_partial'
 
+  def initialize(app = nil, params = {})
+    super(app)
+    # TODO: implement
+  end
+
   get '/' do
     haml :index
   end
