@@ -7,7 +7,7 @@ require 'haml'
 require './storage'
 
 class SinatraBootstrap < Sinatra::Base
-  require './helpers/render_partial'
+  # require './helpers/render_partial'
 
   def initialize(app = nil, params = {})
     super(app)
@@ -21,7 +21,6 @@ class SinatraBootstrap < Sinatra::Base
   end
 
   post '/new' do
-    p params
     content = Content.new
     content.id = params[:id]
     content.key = params[:key]
