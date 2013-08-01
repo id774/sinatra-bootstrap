@@ -12,12 +12,22 @@ class SinatraBootstrap < Sinatra::Base
   def initialize(app = nil, params = {})
     super(app)
     # TODO: implement
+    @storage = Storage.new
   end
 
   get '/' do
-    storage = Storage.new
     @contents = Content.all
     haml :index
+  end
+
+  post '/new' do
+    p params
+    content = Content.new
+    content.id = params[:id]
+    content.key = params[:key]
+    content.value = params[:value]
+    content.save
+    redirect '/'
   end
 
   run! if app_file == $0
