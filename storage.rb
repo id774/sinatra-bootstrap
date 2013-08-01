@@ -34,7 +34,6 @@ class Storage
 
   def column_definition
     {
-      :id => :integer,
       :key => :string,
       :value => :string,
     }
