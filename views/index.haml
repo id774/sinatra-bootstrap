@@ -33,15 +33,15 @@
               %thead
                 %tr
                   %th ID
-                  %th Name
-                  %th Body
+                  %th Key
+                  %th Value
               %tbody
                 - @contents.each do |content|
                   %tr
                     %td
                       = content.id
                     %td
-                      = content.name
+                      = content.key
                     %td
-                      = content.body
+                      = content.value
 

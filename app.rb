@@ -1,13 +1,10 @@
+#!/opt/ruby/current/bin/ruby
+# -*- coding: utf-8 -*-
+
 require 'rubygems'
 require 'sinatra/base'
 require 'haml'
-require 'active_record'
-
-ActiveRecord::Base.configurations = YAML.load_file('database.yml')
-ActiveRecord::Base.establish_connection('development')
-
-class Content < ActiveRecord::Base
-end
+require './storage'
 
 class SinatraBootstrap < Sinatra::Base
   require './helpers/render_partial'
@@ -18,10 +15,10 @@ class SinatraBootstrap < Sinatra::Base
   end
 
   get '/' do
+    storage = Storage.new
     @contents = Content.all
     haml :index
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
