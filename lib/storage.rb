@@ -22,8 +22,8 @@ class Storage
   private
 
   def prepare_database
-    db_config = File.expand_path(File.join(File.dirname(__FILE__), 'config', 'database.yml'))
-    ActiveRecord::Base.configurations = YAML.load_file(db_config)
+    ActiveRecord::Base.configurations = YAML.load_file(File.expand_path(File.join(File.dirname(__FILE__),
+      '..', 'config', 'database.yml')))
     ActiveRecord::Base.establish_connection('development')
     create_table unless model_class.table_exists?
   end

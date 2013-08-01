@@ -4,10 +4,16 @@
 require 'rubygems'
 require 'sinatra/base'
 require 'haml'
-require './storage'
+require './lib/storage'
 
 class SinatraBootstrap < Sinatra::Base
   # require './helpers/render_partial'
+
+  helpers do
+    def h(text)
+      Rack::Utils.escape_html(text)
+    end
+  end
 
   def initialize(app = nil, params = {})
     super(app)
