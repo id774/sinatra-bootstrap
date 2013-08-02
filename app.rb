@@ -5,6 +5,8 @@ require 'rubygems'
 require 'sinatra/base'
 require 'haml'
 require './lib/storage'
+require 'will_paginate'
+require 'will_paginate/active_record'
 
 class SinatraBootstrap < Sinatra::Base
   # require './helpers/render_partial'
@@ -22,7 +24,7 @@ class SinatraBootstrap < Sinatra::Base
   end
 
   get '/' do
-    @contents = Content.all
+    @contents = Content.paginate(:page => params[:page])
     haml :index
   end
 

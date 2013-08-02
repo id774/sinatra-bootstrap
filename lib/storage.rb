@@ -2,8 +2,11 @@
 # -*- coding: utf-8 -*-
 
 require 'active_record'
+require 'will_paginate'
+require 'will_paginate/active_record'
 
 class Content < ActiveRecord::Base
+  self.per_page = 5
 end
 
 class Storage
