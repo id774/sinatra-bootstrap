@@ -7,13 +7,21 @@ require 'haml'
 require './lib/storage'
 require 'will_paginate'
 require 'will_paginate/active_record'
+require 'will_paginate/view_helpers'
+require 'will_paginate/view_helpers/sinatra'
+require "will_paginate-bootstrap"
 
 class SinatraBootstrap < Sinatra::Base
   # require './helpers/render_partial'
+  include WillPaginate::Sinatra::Helpers
 
   helpers do
     def h(text)
       Rack::Utils.escape_html(text)
+    end
+
+    def paginate
+      will_paginate @contents, :renderer => BootstrapPagination::Sinatra
     end
   end
 
