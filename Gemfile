@@ -10,7 +10,6 @@ gem 'activerecord'
 
 gem "meta_search"
 gem "will_paginate"
-gem "will_paginate-bootstrap"
 
 gem 'sass'
 gem 'compass'

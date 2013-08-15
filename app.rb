@@ -5,11 +5,11 @@ require 'rubygems'
 require 'sinatra/base'
 require 'haml'
 require './lib/storage'
+require './lib/paginate'
 require 'will_paginate'
 require 'will_paginate/active_record'
 require 'will_paginate/view_helpers'
 require 'will_paginate/view_helpers/sinatra'
-require "will_paginate-bootstrap"
 
 class SinatraBootstrap < Sinatra::Base
   # require './helpers/render_partial'
@@ -21,13 +21,12 @@ class SinatraBootstrap < Sinatra::Base
     end
 
     def paginate
-      will_paginate @contents, :renderer => BootstrapPagination::Sinatra
+      will_paginate @contents, :renderer => BootstrapPaginationRenderer
     end
   end
 
   def initialize(app = nil, params = {})
     super(app)
-    # TODO: implement
     @storage = Storage.new
   end
 
@@ -37,11 +36,10 @@ class SinatraBootstrap < Sinatra::Base
   end
 
   post '/new' do
-    content = Content.new
-    content.id = params[:id]
-    content.key = params[:key]
-    content.value = params[:value]
-    content.save
+    @content = Content.new
+    @content.key = params[:key]
+    @content.value = params[:value]
+    @content.save
     redirect '/'
   end
 
