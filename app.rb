@@ -3,6 +3,7 @@
 
 require 'rubygems'
 require 'sinatra/base'
+require 'sinatra/reloader'
 require 'haml'
 require './lib/storage'
 require './lib/paginate'
@@ -14,6 +15,10 @@ require 'will_paginate/view_helpers/sinatra'
 class SinatraBootstrap < Sinatra::Base
   # require './helpers/render_partial'
   include WillPaginate::Sinatra::Helpers
+
+  configure :development do
+    register Sinatra::Reloader
+  end
 
   helpers do
     def h(text)
