@@ -39,6 +39,8 @@ class Storage
     {
       :key => :string,
       :value => :string,
+      :created_at => :datetime,
+      :updated_at => :datetime
     }
   end
 
