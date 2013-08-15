@@ -14,3 +14,7 @@ gem "will_paginate"
 
 gem 'sass'
 gem 'compass'
+
+group :test do
+  gem 'rspec'
+end
