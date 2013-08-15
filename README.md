@@ -8,6 +8,7 @@ Sinatra Bootstrap supports:
 * [Sass](http://sass-lang.com/)
 * [Compass](https://github.com/chriseppstein/compass)
 * [jQuery](http://jquery.com/)
+* [RSpec](http://rspec.info/)
 
 ## What is the purpose of Sinatra Bootstrap?
 
@@ -15,7 +16,7 @@ I created Sinatra Bootstrap in order to have a consistent starting point for my 
 
 ## How do I get started?
 
-    bundle install
+    bundle install --path=vendor/bundler
 
 ## How do I start the application?
 
