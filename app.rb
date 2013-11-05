@@ -35,6 +35,10 @@ class SinatraBootstrap < Sinatra::Base
     @storage = Storage.new
   end
 
+  def logger
+    env['app.logger'] || env['rack.logger']
+  end
+
   get '/' do
     @contents = Content.paginate(:page => params[:page], :order => 'updated_at desc')
     haml :index
