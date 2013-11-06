@@ -40,7 +40,7 @@ class SinatraBootstrap < Sinatra::Base
     haml :index
   end
 
-  post "/new" do
+  post '/new' do
     @content = Content.new
     @content.key = params[:key]
     @content.value = params[:value]
