@@ -57,7 +57,7 @@
     .content
       .row
         .span10.offset1
-          %form{:method => "post", :action => "new"}
+          %form{:method => "post", :action => "#{@root}new"}
             %input{:type => "text", :name => "key"}
             %input{:type => "text", :name => "value"}
             .form-actions

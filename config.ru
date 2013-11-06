@@ -11,6 +11,15 @@ def logger.write(msg)
   self << msg
 end
 
+configure :development do
+  require 'sinatra/reloader'
+  register Sinatra::Reloader
+end
+
+configure :production do
+end
+
+set :public_dir, File.dirname(__FILE__) + '/public'
 use AppLog, logger
 use Rack::CommonLogger, logger
 

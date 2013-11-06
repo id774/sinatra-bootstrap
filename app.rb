@@ -3,7 +3,6 @@
 
 require 'rubygems'
 require 'sinatra/base'
-require 'sinatra/reloader'
 require 'haml'
 require './lib/storage'
 require './lib/paginate'
@@ -15,10 +14,6 @@ require 'will_paginate/view_helpers/sinatra'
 class SinatraBootstrap < Sinatra::Base
   # require './helpers/render_partial'
   include WillPaginate::Sinatra::Helpers
-
-  configure :development do
-    register Sinatra::Reloader
-  end
 
   helpers do
     def h(text)
@@ -33,6 +28,7 @@ class SinatraBootstrap < Sinatra::Base
   def initialize(app = nil, params = {})
     super(app)
     @storage = Storage.new
+    @root = Sinatra::Application.environment == :production ? '/sinatra-bootstrap/' : '/'
   end
 
   def logger
@@ -44,12 +40,12 @@ class SinatraBootstrap < Sinatra::Base
     haml :index
   end
 
-  post '/new' do
+  post "/new" do
     @content = Content.new
     @content.key = params[:key]
     @content.value = params[:value]
     @content.save
-    redirect '/'
+    redirect "#{@root}"
   end
 
   run! if app_file == $0
