@@ -2,10 +2,13 @@ section {
   padding-top: 30px;
 }
 a {
-  color: #8888CC;
+  color: #0033CC;
   text-decoration: none;
 }
 a:hover {
-  color: #0088BB;
+  color: #1111CC;
   text-decoration: underline;
+}
+blockquote p {
+  font-size: 100%;
 }
