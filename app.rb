@@ -36,7 +36,7 @@ class SinatraBootstrap < Sinatra::Base
   end
 
   get '/' do
-    @contents = Content.paginate(:page => params[:page], :order => 'updated_at desc')
+    @contents = Content.paginate(:page => params[:page]).order('updated_at desc')
     haml :index
   end
 
