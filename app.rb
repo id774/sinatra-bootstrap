@@ -11,6 +11,8 @@ require 'will_paginate/active_record'
 require 'will_paginate/view_helpers'
 require 'will_paginate/view_helpers/sinatra'
 
+I18n.enforce_available_locales = false
+
 class SinatraBootstrap < Sinatra::Base
   # require './helpers/render_partial'
   include WillPaginate::Sinatra::Helpers
