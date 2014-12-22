@@ -28,6 +28,12 @@ This rake command runs `bundle exec shotgun config.ru` behind the scenes for you
 
 You'll also want to open a new terminal window to the same directory and run `compass watch` to watch the Sass files for changes.
 
+Or:
+
+    foreman start
+
+This command runs Foreman Procfile-based applications. See manual of foreman.
+
 ## Helper Rake Tasks
 
 There are a few helper Rake tasks that will help you to clear and compile your Sass stylesheets as well as a few other helpful tasks. There is also a generate task, so you can generate a new project at a defined location based on the bootstrap.
