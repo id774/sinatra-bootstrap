@@ -9,7 +9,7 @@ gem 'shotgun'
 gem 'haml'
 
 gem 'sqlite3'
-gem 'activerecord', '~> 4.1'
+gem 'activerecord', '~> 4.2'
 
 gem "will_paginate", '~> 3.0'
 gem "meta_search"
