@@ -2,6 +2,8 @@ require 'rubygems'
 require 'sinatra'
 require 'logger'
 require './lib/applog'
+require './lib/storage'
+require './lib/paginate'
 require './app'
 
 logdir = File.dirname(__FILE__) + "/log"

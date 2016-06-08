@@ -4,8 +4,6 @@
 require 'rubygems'
 require 'sinatra/base'
 require 'haml'
-require './lib/storage'
-require './lib/paginate'
 require 'will_paginate'
 require 'will_paginate/active_record'
 require 'will_paginate/view_helpers'
