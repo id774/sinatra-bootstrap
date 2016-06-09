@@ -16,7 +16,7 @@ I created Sinatra Bootstrap in order to have a consistent starting point for my 
 
 ## How do I get started?
 
-    bundle install --path=vendor/bundler
+    bundle install --path=vendor/gems
 
 ## How do I start the application?
 
