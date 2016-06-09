@@ -3,6 +3,8 @@
 ENV['RACK_ENV'] = "test"
 
 require File.dirname(__FILE__) + '/../app'
+require File.dirname(__FILE__) + '/../lib/storage'
+require File.dirname(__FILE__) + '/../lib/paginate'
 
 require 'rspec'
 require 'rack/test'
