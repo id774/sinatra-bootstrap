@@ -1,4 +1,4 @@
-# Version:20141030
+# Version:20160609
 
 source "https://rubygems.org"
 
@@ -18,5 +18,5 @@ gem 'sass'
 gem 'compass'
 
 group :test do
-  gem 'rspec', '~> 2.14'
+  gem 'rspec', '~> 3.4'
 end
