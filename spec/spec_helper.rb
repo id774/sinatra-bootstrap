@@ -14,5 +14,5 @@ RSpec.configure do |conf|
 end
 
 def app
-  SinatraBootstrap
+  Sinatra::Application
 end
