@@ -12,7 +12,6 @@ gem 'sqlite3'
 gem 'activerecord', '~> 4.2'
 
 gem "will_paginate", '~> 3.0'
-gem "meta_search"
 
 gem 'sass'
 gem 'compass'

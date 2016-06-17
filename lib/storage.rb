@@ -36,7 +36,7 @@ class Storage
   def prepare_database
     ActiveRecord::Base.configurations = YAML.load_file(File.expand_path(File.join(File.dirname(__FILE__),
       '..', 'config', 'database.yml')))
-    ActiveRecord::Base.establish_connection(:development)
+    ActiveRecord::Base.establish_connection(Sinatra::Application.environment)
     create
   end
 
